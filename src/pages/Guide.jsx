@@ -130,7 +130,7 @@ const Guide = () => {
                 </ul>
               </div>
             </GuideSection>
-                </motion.div>
+          </motion.div>
   );
 };
 
