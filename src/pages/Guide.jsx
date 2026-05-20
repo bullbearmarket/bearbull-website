@@ -130,3 +130,8 @@ const Guide = () => {
                 </ul>
               </div>
             </GuideSection>
+                </motion.div>
+  );
+};
+
+export default Guide;
