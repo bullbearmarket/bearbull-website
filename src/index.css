@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 142.1 76.2% 36.3%;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-glass;
+  }
+
+  .premium-gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#0a0a0f] via-[#2d2d39] to-[#0a0a0f];
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-[#00ff88] text-[#0a0a0f] font-semibold rounded-full 
+    hover:shadow-[0_0_20px_rgba(0,255,136,0.4)] transition-all duration-300 
+    active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 bg-transparent border border-[#e2e8f0] text-[#0a0a0f] font-semibold rounded-full 
+    hover:bg-[#f8f9fa] transition-all duration-300 active:scale-95;
+  }
+
+  .section-padding {
+    @apply py-20 lg:py-32 px-6 lg:px-12 max-w-7xl mx-auto;
+  }
+}
+
+.floating-gradient {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 255, 136, 0.08) 0%, rgba(255, 215, 0, 0.03) 50%, rgba(255, 255, 255, 0) 100%);
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.crypto-grid {
+  background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+  background-size: 40px 40px;
+}
