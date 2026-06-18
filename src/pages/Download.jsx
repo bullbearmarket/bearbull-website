@@ -52,8 +52,7 @@ const Download = () => {
                   <div className="text-lg leading-none">App Store</div>
                 </div>
               </a>
-              <a 
-                href="#" 
+              href="https://play.google.com/store/apps/details?id=com.bearbull.cryptosimulator" 
                 className="flex items-center justify-center gap-3 bg-white text-[#0a0a0f] border-2 border-gray-100 px-8 py-4 rounded-2xl font-bold hover:bg-gray-50 transition-all group shadow-xl"
               >
                 <PlayCircle className="w-6 h-6 fill-current" />
