@@ -54,9 +54,15 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start"
             >
-              <Link to="/download" className="btn-primary w-full sm:w-auto flex items-center justify-center gap-2 px-10 py-5 text-lg">
-                Get Started Free <ArrowRight className="w-5 h-5" />
-              </Link>
+              <a
+  href="https://play.google.com/store/apps/details?id=com.bearbull.cryptosimulator"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn-primary w-full sm:w-auto flex items-center justify-center gap-2 px-10 py-5 text-lg"
+>
+  Get Started Free
+  <ArrowRight className="w-5 h-5" />
+</a>
               <Link to="/guide" className="btn-outline w-full sm:w-auto flex items-center justify-center gap-2 px-10 py-5 text-lg border-2">
                 Learn Strategy
               </Link>
