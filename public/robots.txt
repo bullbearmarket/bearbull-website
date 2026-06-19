@@ -1,6 +1,26 @@
-# https://www.robotstxt.org/robotstxt.html
+# BearBull Market - Advanced SEO Robots
+# Allow all search engines and AI crawlers
+
 User-agent: *
 Allow: /
 
-# Sitemaps
+# Specifically allow Googlebot for images and mobile indexing
+User-agent: Googlebot
+Allow: /
+User-agent: Googlebot-Image
+Allow: /
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Block bad/spam bots to save server performance
+User-agent: BLEXBot
+Disallow: /
+User-agent: AhrefsBot
+Disallow: /
+User-agent: SemrushBot
+Disallow: /
+User-agent: MJ12bot
+Disallow: /
+
+# Sitemap Location
 Sitemap: https://bearbullmarket.in/sitemap.xml
