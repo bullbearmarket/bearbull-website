@@ -90,7 +90,7 @@ const Download = () => {
               
               <div className="bg-gray-800 rounded-2xl p-4 mb-6 text-center border border-gray-700 shadow-inner">
                 <p className="text-gray-400 text-xs mb-1">Virtual Portfolio</p>
-                <h3 className="text-3xl font-black text-white">$100,000<span className="text-sm text-gray-500">.00</span></h3>
+                <h3 className="text-3xl font-black text-white">$10000<span className="text-sm text-gray-500">.00</span></h3>
                 <p className="text-green-400 text-xs mt-1 font-bold">Risk-Free Trading</p>
               </div>
 
