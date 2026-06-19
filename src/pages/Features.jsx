@@ -4,63 +4,35 @@ import {
   Zap,
   BarChart3,
   Globe,
-  Smartphone,
   Trophy,
-  Clock,
-  Layers,
   Target,
   ArrowRight,
+  Gift,
+  Medal,
+  Crown,
+  Star,
+  Activity,
+  ShieldCheck,
   TrendingUp,
-  Activity
+  Box
 } from 'lucide-react';
-
 import { Link } from 'react-router-dom';
-import SEO from '../components/utils/SEO';
 
-const features = [
-  {
-    icon: Zap,
-    title: 'Fast Trading Engine',
-    description:
-      'Experience fast and realistic crypto market simulations with live-style execution.',
-    color: 'text-green-500'
-  },
-  {
-    icon: Globe,
-    title: 'Live Market Data',
-    description:
-      'Track real-time market movements and practice strategies in a dynamic environment.',
-    color: 'text-blue-500'
-  },
-  {
-    icon: Target,
-    title: 'Risk Management',
-    description:
-      'Use stop-loss strategies and portfolio protection techniques like professional traders.',
-    color: 'text-yellow-500'
-  },
-  {
-    icon: BarChart3,
-    title: 'Advanced Analytics',
-    description:
-      'Analyze portfolio growth, performance metrics, and trading statistics.',
-    color: 'text-purple-500'
-  },
-  {
-    icon: Trophy,
-    title: 'Leaderboard System',
-    description:
-      'Compete with global traders and improve your ranking every season.',
-    color: 'text-orange-500'
-  },
-  {
-    icon: Smartphone,
-    title: 'Mobile Friendly',
-    description:
-      'Access BearBull easily on mobile devices with a smooth interface.',
-    color: 'text-pink-500'
-  }
-];
+const FeatureCard = ({ icon: Icon, title, desc, colorClass, delay }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5, delay }}
+    className="bg-white rounded-[2rem] p-8 border border-gray-100 hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] hover:-translate-y-2 transition-all duration-300 group"
+  >
+    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 ${colorClass}`}>
+      <Icon className="w-8 h-8" />
+    </div>
+    <h3 className="text-2xl font-black text-[#0a0a0f] mb-4">{title}</h3>
+    <p className="text-[#64748b] leading-relaxed text-lg">{desc}</p>
+  </motion.div>
+);
 
 const Features = () => {
   return (
@@ -68,140 +40,212 @@ const Features = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="bg-white"
+      className="bg-[#fcfcfd] min-h-screen pt-24 overflow-hidden"
     >
-      <SEO
-        title="BearBull Features"
-        description="Explore BearBull crypto simulator features including portfolio analytics, live market simulation, leaderboards, and trading tools."
-      />
-
       {/* Hero Section */}
-      <section className="py-24 px-6 bg-gray-50">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl lg:text-7xl font-black text-black mb-8">
-            Professional Trading <br />
-            Tools & Features
-          </h1>
-
-          <p className="text-gray-600 text-xl max-w-3xl mx-auto leading-relaxed">
-            BearBull provides powerful crypto simulation tools designed for
-            learning, strategy testing, and competitive trading practice.
-          </p>
+      <section className="relative px-6 py-20 lg:py-32">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,_#00ff8815_0%,transparent_70%)] pointer-events-none" />
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0a0a0f] text-[#00ff88] text-sm font-bold mb-8 uppercase tracking-widest shadow-xl">
+              <Star className="w-4 h-4 fill-current" />
+              Next-Gen Trading Simulator
+            </span>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-[#0a0a0f] mb-8 leading-[1.05] tracking-tight">
+              Built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00ff88] to-emerald-600">Champions.</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-[#64748b] max-w-3xl mx-auto leading-relaxed">
+              Experience the ultimate blend of professional crypto trading and addictive gameplay. Level up, earn badges, and win real cash.
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      {/* Features Grid */}
-      <section className="py-24 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ y: -6 }}
-              className="bg-white border border-gray-200 rounded-[2rem] p-8 shadow-sm hover:shadow-xl transition-all"
-            >
-              <div className="mb-6">
-                <feature.icon className={`w-12 h-12 ${feature.color}`} />
-              </div>
-
-              <h3 className="text-2xl font-black text-black mb-4">
-                {feature.title}
-              </h3>
-
-              <p className="text-gray-600 leading-relaxed">
-                {feature.description}
-              </p>
-            </motion.div>
-          ))}
+      {/* Core Trading Features */}
+      <section className="px-6 py-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+             <h2 className="text-4xl font-black text-[#0a0a0f]">Pro Trading Engine</h2>
+             <p className="text-[#64748b] mt-4 text-lg">Practice with the exact same tools used by Wall Street.</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <FeatureCard 
+              icon={Activity} 
+              title="Real-Time Live Data" 
+              desc="Our simulator uses direct Binance APIs. If Bitcoin moves in the real world, it moves in your virtual portfolio instantly."
+              colorClass="bg-blue-50 text-blue-600 border border-blue-100"
+              delay={0.1}
+            />
+            <FeatureCard 
+              icon={TrendingUp} 
+              title="Margin & Leverage" 
+              desc="Want to go big? Use virtual margin trading to amplify your positions and test high-risk strategies safely."
+              colorClass="bg-purple-50 text-purple-600 border border-purple-100"
+              delay={0.2}
+            />
+            <FeatureCard 
+              icon={BarChart3} 
+              title="Advanced Analytics" 
+              desc="Track your win rate, profit margins, and portfolio growth with beautiful, easy-to-understand charts."
+              colorClass="bg-orange-50 text-orange-600 border border-orange-100"
+              delay={0.3}
+            />
+          </div>
         </div>
       </section>
 
-      {/* Engine Section */}
-      <section className="py-24 px-6 bg-black text-white">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
-          <div>
-            <h2 className="text-4xl lg:text-6xl font-black mb-10">
-              Real-Time Trading Experience
-            </h2>
+      {/* Gamification Section (Missions, Mystery Box, Badges, Levels) */}
+      <section className="py-24 bg-[#0a0a0f] text-white relative px-6 mt-20">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(ellipse_at_right,_#00ff8810_0%,transparent_70%)] pointer-events-none" />
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <span className="text-[#00ff88] font-bold tracking-widest uppercase mb-4 block">Gamified Experience</span>
+            <h2 className="text-5xl lg:text-6xl font-black mb-6">Play. Learn. Dominate.</h2>
+            <p className="text-gray-400 text-xl max-w-2xl mx-auto">Trading shouldn't be boring. We've added missions, loot, and levels to keep you engaged every single day.</p>
+          </div>
 
-            <div className="space-y-8">
-              <div className="flex gap-4">
-                <Clock className="w-8 h-8 text-green-400 flex-shrink-0" />
-                <div>
-                  <h4 className="font-bold text-xl mb-2">
-                    Fast Execution
-                  </h4>
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+            {/* Daily Missions */}
+            <div className="bg-gray-900/50 backdrop-blur-xl border border-gray-800 p-10 rounded-[3rem] hover:border-[#00ff88]/50 transition-colors">
+               <div className="flex items-center gap-6 mb-8">
+                 <div className="w-16 h-16 rounded-2xl bg-indigo-500/20 flex items-center justify-center text-indigo-400">
+                   <Target className="w-8 h-8" />
+                 </div>
+                 <h3 className="text-3xl font-black">Daily Missions</h3>
+               </div>
+               <p className="text-gray-400 text-lg leading-relaxed mb-6">Log in daily and complete specific trading tasks like "Make 3 profitable trades" or "Use Margin on ETH" to earn massive XP boosts and virtual cash bonuses.</p>
+               <ul className="space-y-3">
+                 <li className="flex items-center gap-3 text-sm font-bold text-gray-300"><ShieldCheck className="w-5 h-5 text-[#00ff88]" /> Refreshes every 24 hours</li>
+                 <li className="flex items-center gap-3 text-sm font-bold text-gray-300"><ShieldCheck className="w-5 h-5 text-[#00ff88]" /> Claim bonus virtual portfolio funds</li>
+               </ul>
+            </div>
 
-                  <p className="text-gray-400">
-                    Simulated market execution built for realistic trading practice.
-                  </p>
-                </div>
-              </div>
+            {/* Mystery Box */}
+            <div className="bg-gray-900/50 backdrop-blur-xl border border-gray-800 p-10 rounded-[3rem] hover:border-[#00ff88]/50 transition-colors">
+               <div className="flex items-center gap-6 mb-8">
+                 <div className="w-16 h-16 rounded-2xl bg-yellow-500/20 flex items-center justify-center text-yellow-400">
+                   <Box className="w-8 h-8" />
+                 </div>
+                 <h3 className="text-3xl font-black">Mystery Boxes</h3>
+               </div>
+               <p className="text-gray-400 text-lg leading-relaxed mb-6">Feeling lucky? Unlock special Mystery Boxes by completing weekly streaks. Inside, you'll find rare profile badges, huge XP multipliers, and surprise rewards!</p>
+               <ul className="space-y-3">
+                 <li className="flex items-center gap-3 text-sm font-bold text-gray-300"><ShieldCheck className="w-5 h-5 text-[#00ff88]" /> Drop rates based on trading volume</li>
+                 <li className="flex items-center gap-3 text-sm font-bold text-gray-300"><ShieldCheck className="w-5 h-5 text-[#00ff88]" /> Unlock Legendary cosmetic items</li>
+               </ul>
+            </div>
 
-              <div className="flex gap-4">
-                <Layers className="w-8 h-8 text-yellow-400 flex-shrink-0" />
-                <div>
-                  <h4 className="font-bold text-xl mb-2">
-                    Multi Asset Support
-                  </h4>
+            {/* Levels */}
+            <div className="bg-gray-900/50 backdrop-blur-xl border border-gray-800 p-10 rounded-[3rem] hover:border-[#00ff88]/50 transition-colors">
+               <div className="flex items-center gap-6 mb-8">
+                 <div className="w-16 h-16 rounded-2xl bg-green-500/20 flex items-center justify-center text-green-400">
+                   <Crown className="w-8 h-8" />
+                 </div>
+                 <h3 className="text-3xl font-black">Levels & Ranks</h3>
+               </div>
+               <p className="text-gray-400 text-lg leading-relaxed">Start as a 'Novice' and trade your way up to 'Grandmaster'. Every profitable trade gives you XP. Higher levels unlock higher margin limits and exclusive tournaments.</p>
+            </div>
 
-                  <p className="text-gray-400">
-                    Practice trading across multiple crypto assets and strategies.
-                  </p>
-                </div>
-              </div>
+            {/* Badges */}
+            <div className="bg-gray-900/50 backdrop-blur-xl border border-gray-800 p-10 rounded-[3rem] hover:border-[#00ff88]/50 transition-colors">
+               <div className="flex items-center gap-6 mb-8">
+                 <div className="w-16 h-16 rounded-2xl bg-pink-500/20 flex items-center justify-center text-pink-400">
+                   <Medal className="w-8 h-8" />
+                 </div>
+                 <h3 className="text-3xl font-black">Achievement Badges</h3>
+               </div>
+               <p className="text-gray-400 text-lg leading-relaxed">Show off your skills! Earn permanent badges for milestones like "100% Profit in a Day" or "Top 10 Global". Display them proudly on your public profile.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <div className="flex gap-4">
-                <Activity className="w-8 h-8 text-blue-400 flex-shrink-0" />
-                <div>
-                  <h4 className="font-bold text-xl mb-2">
-                    Portfolio Tracking
-                  </h4>
-
-                  <p className="text-gray-400">
-                    Monitor portfolio growth and trading performance in real time.
-                  </p>
-                </div>
-              </div>
+      {/* Rewards & Leaderboard Highlight */}
+      <section className="py-32 px-6 bg-white">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-20">
+          <div className="lg:w-1/2">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-yellow-100 text-yellow-600 mb-8 shadow-lg">
+              <Trophy className="w-10 h-10" />
+            </div>
+            <h2 className="text-5xl lg:text-6xl font-black text-[#0a0a0f] mb-8 leading-tight">Global Leaderboard <br />& Real Rewards</h2>
+            <p className="text-xl text-[#64748b] leading-relaxed mb-10">
+              Your virtual profits have real-world value. Climb the global leaderboard and compete against the best. The top traders at the end of the month win cold, hard cash. 
+            </p>
+            <div className="bg-[#0a0a0f] text-white p-6 rounded-3xl inline-flex gap-8 items-center shadow-2xl">
+               <div>
+                 <p className="text-gray-400 text-sm font-bold uppercase mb-1">1st Place Prize</p>
+                 <p className="text-3xl font-black text-[#00ff88]">$500 Cash</p>
+               </div>
+               <div className="w-px h-12 bg-gray-800"></div>
+               <div>
+                 <p className="text-gray-400 text-sm font-bold uppercase mb-1">Total Payouts</p>
+                 <p className="text-3xl font-black text-white">$15K+ Paid</p>
+               </div>
             </div>
           </div>
 
-          <div className="bg-gray-900 rounded-[2rem] p-10 border border-gray-800">
-            <div className="text-center">
-              <TrendingUp className="w-24 h-24 text-green-400 mx-auto mb-6" />
-
-              <h3 className="text-3xl font-black mb-4">
-                Market Simulation Engine
-              </h3>
-
-              <p className="text-gray-400">
-                Built for learning, analysis, and competitive trading simulation.
-              </p>
+          {/* Visual Mockup */}
+          <div className="lg:w-1/2 w-full relative">
+            <div className="aspect-[4/3] bg-gray-50 rounded-[3rem] border-2 border-gray-100 shadow-[0_30px_60px_rgba(0,0,0,0.05)] p-8 overflow-hidden relative">
+               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500" />
+               <div className="flex justify-between items-end mb-8 border-b border-gray-200 pb-4">
+                 <h3 className="text-2xl font-black">Top Traders</h3>
+                 <span className="text-sm font-bold text-gray-400 uppercase tracking-widest">Season 5</span>
+               </div>
+               
+               <div className="space-y-4 relative z-10">
+                 {[
+                   { rank: 1, name: "CryptoKing99", profit: "+452.8%", prize: "$500" },
+                   { rank: 2, name: "BearHunter", profit: "+389.2%", prize: "$400" },
+                   { rank: 3, name: "SatoshiFan", profit: "+310.5%", prize: "$350" }
+                 ].map((user) => (
+                   <div key={user.rank} className="flex items-center justify-between p-4 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                     <div className="flex items-center gap-4">
+                       <div className={`w-10 h-10 rounded-full flex items-center justify-center font-black text-white ${user.rank === 1 ? 'bg-yellow-500' : user.rank === 2 ? 'bg-gray-400' : 'bg-orange-500'}`}>
+                         {user.rank}
+                       </div>
+                       <span className="font-bold text-lg">{user.name}</span>
+                     </div>
+                     <div className="text-right">
+                       <p className="text-[#00ff88] font-black text-lg">{user.profit}</p>
+                       <p className="text-xs font-bold text-gray-500 uppercase">Wins {user.prize}</p>
+                     </div>
+                   </div>
+                 ))}
+               </div>
+               {/* Fade out effect at bottom */}
+               <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-gray-50 to-transparent z-20" />
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-6">
-        <div className="max-w-5xl mx-auto bg-yellow-400 rounded-[3rem] p-16 text-center">
-          <h2 className="text-4xl lg:text-6xl font-black text-black mb-8">
-            Ready to Start Trading?
+      <section className="px-6 pb-24">
+        <div className="max-w-7xl mx-auto bg-[#00ff88] rounded-[4rem] p-16 lg:p-24 text-center relative overflow-hidden shadow-[0_30px_60px_rgba(0,255,136,0.3)] hover:shadow-[0_40px_80px_rgba(0,255,136,0.4)] transition-shadow duration-500">
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"></div>
+          <h2 className="text-5xl lg:text-7xl font-black text-[#0a0a0f] mb-8 relative z-10 tracking-tight">
+            Stop waiting. <br/>Start trading.
           </h2>
-
-          <p className="text-black/70 text-xl mb-10 max-w-2xl mx-auto">
-            Join BearBull and improve your crypto trading skills with a premium
-            simulator experience.
+          <p className="text-[#0a0a0f]/80 text-xl md:text-2xl mb-12 max-w-2xl mx-auto font-medium relative z-10">
+            Download the app, claim your daily mission, open your first mystery box, and climb to the top!
           </p>
-
-          <Link
-            to="/download"
-            className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 rounded-full font-black text-lg hover:scale-105 transition-all"
+          <a
+            href="https://play.google.com/store/apps/details?id=com.bearbull.cryptosimulator"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-3 bg-[#0a0a0f] text-white px-12 py-6 rounded-full font-black text-xl hover:scale-110 active:scale-95 transition-all relative z-10 shadow-2xl"
           >
-            Download Now
-            <ArrowRight className="w-5 h-5" />
-          </Link>
+            Download Free App
+            <ArrowRight className="w-6 h-6" />
+          </a>
         </div>
       </section>
+
     </motion.div>
   );
 };
