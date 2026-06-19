@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 
 const ContactInfo = ({ icon: Icon, title, content, subContent }) => (
-  <div className="flex gap-6 p-8 rounded-[2rem] bg-white border border-gray-100 hover:shadow-premium transition-all duration-300">
+  <div className="flex gap-6 p-8 rounded-[2rem] bg-white border border-gray-100 hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] transition-all duration-300">
     <div className="flex-shrink-0 w-12 h-12 bg-[#00ff88]/10 rounded-xl flex items-center justify-center">
       <Icon className="w-6 h-6 text-[#0a0a0f]" />
     </div>
@@ -27,12 +27,11 @@ const ContactInfo = ({ icon: Icon, title, content, subContent }) => (
 );
 
 const Contact = () => {
-  const [formState, setFormState] = useState('idle'); // idle, sending, success
+  const [formState, setFormState] = useState('idle'); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormState('sending');
-    // Simulate API call
     setTimeout(() => setFormState('success'), 1500);
   };
 
@@ -43,9 +42,8 @@ const Contact = () => {
       exit={{ opacity: 0 }}
       className="pt-24 min-h-screen bg-[#fcfcfd]"
     >
-      {/* Header Section */}
       <section className="section-padding !pb-12">
-        <div className="max-w-4xl">
+        <div className="max-w-4xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -57,23 +55,22 @@ const Contact = () => {
             </span>
             <h1 className="text-5xl lg:text-7xl font-black text-[#0a0a0f] mb-8 leading-tight">
               We're here to help <br />
-              <span className="premium-gradient-text">you succeed.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00ff88] to-emerald-600">you succeed.</span>
             </h1>
             <p className="text-xl text-[#64748b] leading-relaxed max-w-2xl">
-              Have questions about the simulator, rewards, or technical issues? 
+              Have questions about the simulator, rewards, or direct withdrawals? 
               Our support team is available around the clock to assist you.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Main Content Grid */}
-      <section className="section-padding !pt-0">
-        <div className="grid lg:grid-cols-5 gap-16">
+      <section className="section-padding !pt-0 px-6">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-5 gap-16">
           
           {/* Contact Form Column */}
           <div className="lg:col-span-3">
-            <div className="bg-white rounded-[3rem] border border-gray-100 p-8 lg:p-12 shadow-sm">
+            <div className="bg-white rounded-[3rem] border border-gray-100 p-8 lg:p-12 shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] transition-all">
               {formState === 'success' ? (
                 <motion.div 
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -87,7 +84,7 @@ const Contact = () => {
                   <p className="text-[#64748b] mb-8">Thank you for reaching out. Our team will get back to you within 24 hours.</p>
                   <button 
                     onClick={() => setFormState('idle')}
-                    className="btn-outline"
+                    className="bg-gray-100 text-[#0a0a0f] px-8 py-4 rounded-xl font-bold hover:bg-gray-200 transition-colors"
                   >
                     Send another message
                   </button>
@@ -110,7 +107,7 @@ const Contact = () => {
                         type="email" 
                         required
                         className="w-full px-6 py-4 rounded-2xl bg-[#f8f9fa] border border-transparent focus:border-[#00ff88] focus:bg-white outline-none transition-all"
-                        placeholder="john@example.com"
+                        placeholder="moneymaker@example.com"
                       />
                     </div>
                   </div>
@@ -118,10 +115,9 @@ const Contact = () => {
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-[#0a0a0f] ml-1">Subject</label>
                     <select className="w-full px-6 py-4 rounded-2xl bg-[#f8f9fa] border border-transparent focus:border-[#00ff88] focus:bg-white outline-none transition-all appearance-none">
+                      <option>Reward Withdrawal & Payments</option>
                       <option>General Inquiry</option>
                       <option>Technical Support</option>
-                      <option>Reward Withdrawal</option>
-                      <option>Premium Membership</option>
                       <option>Partnership</option>
                     </select>
                   </div>
@@ -132,16 +128,16 @@ const Contact = () => {
                       required
                       rows="6"
                       className="w-full px-6 py-4 rounded-2xl bg-[#f8f9fa] border border-transparent focus:border-[#00ff88] focus:bg-white outline-none transition-all resize-none"
-                      placeholder="How can we help you?"
+                      placeholder="How can we help you win today?"
                     ></textarea>
                   </div>
 
                   <button 
                     disabled={formState === 'sending'}
-                    className="w-full btn-primary flex items-center justify-center gap-3 text-lg py-5"
+                    className="w-full bg-[#0a0a0f] text-white flex items-center justify-center gap-3 text-lg py-5 rounded-2xl font-bold hover:bg-[#2d2d39] transition-all"
                   >
                     {formState === 'sending' ? (
-                      <div className="w-6 h-6 border-2 border-[#0a0a0f] border-t-transparent rounded-full animate-spin"></div>
+                      <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                     ) : (
                       <>
                         Send Message
@@ -158,8 +154,8 @@ const Contact = () => {
           <div className="lg:col-span-2 space-y-6">
             <ContactInfo 
               icon={Mail}
-              title="Email Us"
-              content="support@bearbullmarket.in"
+              title="Direct Email Support"
+              content="moneymaker.earnmoney@gmail.com"
               subContent="Our average response time is < 2 hours."
             />
             <ContactInfo 
@@ -170,12 +166,11 @@ const Contact = () => {
             />
             <ContactInfo 
               icon={MapPin}
-              title="Global HQ"
+              title="Global Operations"
               content="BearBull Digital Hub"
-              subContent="Digital-first operations worldwide."
+              subContent="Digital-first worldwide."
             />
 
-            {/* Social Links Box */}
             <div className="p-8 rounded-[2.5rem] bg-[#0a0a0f] text-white">
               <h4 className="text-xl font-bold mb-6">Join the Community</h4>
               <div className="flex gap-4">
@@ -195,22 +190,9 @@ const Contact = () => {
                 ))}
               </div>
               <p className="text-gray-400 text-sm mt-8 leading-relaxed">
-                Follow us for daily market insights, trading tips, and reward announcements.
+                Follow us for daily market insights, trading tips, and reward announcements!
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Trust Quote */}
-      <section className="section-padding text-center">
-        <div className="max-w-2xl mx-auto">
-          <div className="w-12 h-[2px] bg-[#00ff88] mx-auto mb-8" />
-          <p className="text-2xl font-medium text-[#0a0a0f] italic leading-relaxed">
-            "We aren't just building a simulator; we're building a global academy where everyone has the tools to succeed."
-          </p>
-          <div className="mt-6 font-bold text-[#0a0a0f] uppercase tracking-widest text-sm">
-            The BearBull Team
           </div>
         </div>
       </section>
