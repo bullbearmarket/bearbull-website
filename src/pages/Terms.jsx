@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Scale, ShieldAlert, Gavel, AlertCircle, Ban, History } from 'lucide-react';
+import { Scale, ShieldAlert, Gavel, AlertCircle, History } from 'lucide-react';
 
 const TermsSection = ({ title, icon: Icon, children }) => (
   <div className="mb-12">
     <div className="flex items-center gap-3 mb-6">
-      <div className="w-10 h-10 bg-[#ffd700]/10 rounded-xl flex items-center justify-center">
-        <Icon className="w-5 h-5 text-[#0a0a0f]" />
+      <div className="w-10 h-10 bg-green-500/10 rounded-xl flex items-center justify-center">
+        <Icon className="w-5 h-5 text-green-600" />
       </div>
       <h2 className="text-2xl font-bold text-[#0a0a0f]">{title}</h2>
     </div>
@@ -17,7 +17,7 @@ const TermsSection = ({ title, icon: Icon, children }) => (
 );
 
 const Terms = () => {
-  const lastUpdated = "October 24, 2023";
+  const lastUpdated = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 
   return (
     <motion.div
@@ -26,7 +26,6 @@ const Terms = () => {
       exit={{ opacity: 0 }}
       className="pt-24 bg-[#fcfcfd]"
     >
-      {/* Header */}
       <section className="section-padding !pb-12 text-center lg:text-left border-b border-gray-100 bg-white">
         <div className="max-w-4xl mx-auto">
           <motion.div
@@ -39,86 +38,68 @@ const Terms = () => {
               Last updated: <span className="text-[#0a0a0f] font-semibold">{lastUpdated}</span>
             </p>
             <p className="mt-6 text-[#64748b] max-w-2xl text-lg">
-              By accessing BearBull Crypto Simulator, you agree to be bound by these Terms of Service. Please read them carefully before using our platform.
+              By accessing the BearBull Crypto Simulator app and website, you agree to be bound by these legally binding Terms of Service.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Content */}
       <section className="section-padding">
         <div className="max-w-4xl mx-auto">
           <div className="bg-white rounded-[3rem] border border-gray-100 p-8 lg:p-16 shadow-sm">
             
-            <TermsSection title="Nature of Service" icon={AlertCircle}>
+            <TermsSection title="Nature of Service & No Gambling" icon={AlertCircle}>
               <p className="font-bold text-[#0a0a0f]">
-                BearBull is a simulation platform only.
+                BearBull is exclusively a skill-based trading educational simulator. IT IS NOT A GAMBLING PLATFORM.
               </p>
               <p>
-                All "trading" performed on the platform is conducted with virtual currency (USDT) and does not involve real money or real crypto assets. We do not provide financial advice, and our platform should not be used as the sole basis for real-world investment decisions.
+                No real money is required to participate or trade on our platform. All "trading" is conducted with virtual currency. The virtual balances within BearBull have absolutely no real-world monetary value, cannot be transferred to external crypto wallets, and cannot be purchased with real money.
               </p>
               <p>
-                The virtual balances and assets within BearBull have no real-world value and cannot be transferred to external wallets or converted into legal tender.
+                We do not provide financial advice. Our platform is strictly for educational purposes to help users learn market dynamics without financial risk.
               </p>
+            </TermsSection>
+
+            <TermsSection title="Cash Rewards & Tournaments" icon={Gavel}>
+              <p>BearBull operates free-to-play, skill-based monthly leaderboards where top-performing users may earn cash rewards based entirely on their trading acumen.</p>
+              <ul className="list-disc ml-6 space-y-2">
+                <li><span className="font-bold text-[#0a0a0f]">Skill-Based:</span> Rewards are distributed strictly based on the objective performance (Virtual PnL) of the user's simulated portfolio.</li>
+                <li><span className="font-bold text-[#0a0a0f]">Withdrawals:</span> Eligible winners can withdraw cash prizes directly from the app. All withdrawals may be subject to mandatory identity verification (KYC) and Anti-Money Laundering (AML) checks to prevent fraud.</li>
+                <li><span className="font-bold text-[#0a0a0f]">Anti-Cheating Policy:</span> Any attempt to manipulate rankings via multiple accounts, botting, API exploitation, or collusion will result in immediate permanent account termination and forfeiture of all pending rewards.</li>
+              </ul>
             </TermsSection>
 
             <TermsSection title="User Eligibility" icon={Scale}>
-              <p>To use BearBull, you must:</p>
+              <p>To use BearBull and participate in reward leaderboards, you must:</p>
               <ul className="list-disc ml-6 space-y-2">
-                <li>Be at least 18 years of age (or the legal age of majority in your jurisdiction).</li>
+                <li>Be at least 18 years of age or the legal age of majority in your jurisdiction.</li>
                 <li>Not be a resident of any country under international financial sanctions.</li>
-                <li>Provide accurate and complete information during the registration process.</li>
-              </ul>
-              <p className="mt-4">
-                We reserve the right to suspend or terminate accounts that provide false information or violate eligibility criteria.
-              </p>
-            </TermsSection>
-
-            <TermsSection title="Reward Program Terms" icon={Gavel}>
-              <p>Participation in our monthly reward program is subject to the following rules:</p>
-              <ul className="list-disc ml-6 space-y-2">
-                <li><span className="font-bold text-[#0a0a0f]">Minimum Payout:</span> Users must accumulate at least $25 in rewards before requesting a withdrawal.</li>
-                <li><span className="font-bold text-[#0a0a0f]">No Cash:</span> Rewards are issued exclusively as digital gift cards (Amazon, Google Play, etc.). No cash or direct bank transfers are permitted.</li>
-                <li><span className="font-bold text-[#0a0a0f]">Anti-Cheating:</span> Any attempt to manipulate rankings through multiple accounts, botting, or exploiting technical bugs will result in immediate disqualification and account ban.</li>
-                <li><span className="font-bold text-[#0a0a0f]">Taxes:</span> Users are responsible for any taxes applicable to rewards received in their respective jurisdictions.</li>
+                <li>Provide accurate, truthful, and complete information when requesting reward withdrawals.</li>
               </ul>
             </TermsSection>
 
-            <TermsSection title="Pro Membership" icon={ShieldAlert}>
+            <TermsSection title="Pro Membership & Google Play Billing" icon={ShieldAlert}>
               <p>
-                Subscriptions for Premium (Pro) features are billed on a recurring monthly basis. You can cancel your subscription at any time through the app settings or your app store account.
+                BearBull may offer optional Premium (Pro) features. Subscriptions are billed through Google Play Billing on a recurring basis.
               </p>
               <p>
-                Refunds are subject to the policies of the respective app store (Apple App Store or Google Play Store) through which the purchase was made.
+                You can cancel your subscription at any time through your Google Play Store account settings. Refunds, if applicable, are strictly governed by Google Play Store policies.
               </p>
-            </TermsSection>
-
-            <TermsSection title="Prohibited Conduct" icon={Ban}>
-              <p>Users agree not to:</p>
-              <ul className="list-disc ml-6 space-y-2">
-                <li>Use the service for any illegal or unauthorized purpose.</li>
-                <li>Interfere with or disrupt the integrity or performance of the platform.</li>
-                <li>Attempt to gain unauthorized access to our systems or user accounts.</li>
-                <li>Decompile, reverse engineer, or attempt to extract the source code of the app.</li>
-              </ul>
             </TermsSection>
 
             <TermsSection title="Limitation of Liability" icon={History}>
               <p>
-                BearBull Market and its affiliates shall not be liable for any direct, indirect, incidental, or consequential damages resulting from your use of the simulator. This includes, but is not limited to, losses incurred in real-world trading after using our platform.
-              </p>
-              <p>
-                Market data is provided "as is" and may occasionally experience delays or inaccuracies due to external API performance.
+                BearBull Market and its affiliates shall not be liable for any direct, indirect, incidental, or consequential damages resulting from your use of the simulator. This explicitly includes any financial losses you may incur in real-world trading on third-party exchanges after using our educational platform.
               </p>
             </TermsSection>
 
             <div className="mt-16 pt-10 border-t border-gray-100 bg-[#f8f9fa] -mx-8 lg:-mx-16 px-8 lg:px-16 py-10 rounded-b-[3rem]">
-              <h3 className="text-xl font-bold text-[#0a0a0f] mb-4">Acceptance</h3>
+              <h3 className="text-xl font-bold text-[#0a0a0f] mb-4">Acceptance of Terms</h3>
               <p className="text-[#64748b]">
-                By clicking "Agree" or by using the BearBull platform, you acknowledge that you have read, understood, and agreed to be bound by these Terms. If you do not agree, please discontinue use immediately.
+                By downloading our app from the Google Play Store or using our website, you legally acknowledge that you have read, understood, and agreed to be bound by these Terms of Service.
               </p>
               <p className="mt-6 text-sm text-[#64748b]">
-                Questions? Email us at <a href="mailto:support@bearbullmarket.in" className="text-[#0a0a0f] font-bold underline">support@bearbullmarket.in</a>
+                Legal Inquiries & Support: <a href="mailto:moneymaker.earnmoney@gmail.com" className="text-green-600 font-bold hover:underline">moneymaker.earnmoney@gmail.com</a>
               </p>
             </div>
 
