@@ -139,7 +139,7 @@ const Download = () => {
             
             {/* Quick Metrics */}
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs md:text-sm text-gray-400 font-bold">
-              <span className="flex items-center gap-1.5 text-yellow-500"><Star className="w-4 h-4 fill-yellow-500" /> 4.9/5 Rating</span>
+              <span className="flex items-center gap-1.5 text-yellow-500"><Star className="w-4 h-4 fill-yellow-500" /> 5/5 Rating</span>
               <span>•</span>
               <span>⚡ 100% Free & Without Any Investment</span>
               <span>•</span>
