@@ -64,6 +64,7 @@
     fbq('init', '1988202131783334');
     fbq('track', 'PageView');
 
+    // Click tracking function for Leads campaign
     function handleDownloadClick() {
       if (typeof fbq !== 'undefined') {
         fbq('track', 'Lead', {
@@ -187,14 +188,13 @@
       </div>
     </section>
 
-    <!-- Monthly Leaderboard Rewards (Google Compliant style) -->
+    <!-- Monthly Leaderboard Rewards -->
     <section class="py-20 bg-[#0d0d15] border-y border-white/5 relative">
       <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-yellow-500/5 via-transparent to-transparent pointer-events-none" />
       
       <div class="max-w-7xl mx-auto px-6 relative z-10">
         <div class="text-center max-w-3xl mx-auto mb-16">
           <div class="inline-block p-4 bg-yellow-500/10 rounded-full mb-6 border border-yellow-500/20">
-            <!-- Trophy SVG -->
             <svg class="w-10 h-10 text-yellow-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm-2 6h4M9 13h6"></path></svg>
           </div>
           <h2 class="text-3xl md:text-6xl font-black text-white mb-4">
@@ -320,8 +320,37 @@
       </a>
     </section>
 
+    <!-- ==================== GOOGLE-COMPLIANT FOOTER ==================== -->
+    <footer class="bg-black/90 border-t border-white/5 py-12 px-6 relative z-10 text-center text-xs md:text-sm text-gray-400">
+      <div class="max-w-6xl mx-auto flex flex-col items-center gap-6">
+        
+        <!-- Footer Links -->
+        <div class="flex flex-wrap justify-center gap-6 md:gap-8 font-semibold text-white/80 hover:text-white transition-colors">
+          <a href="https://bearbullmarket.in/" class="hover:text-[#00ff88] transition-colors">Home</a>
+          <span>•</span>
+          <a href="https://bearbullmarket.in/about" class="hover:text-[#00ff88] transition-colors">About Us</a>
+          <span>•</span>
+          <a href="https://bearbullmarket.in/contact" class="hover:text-[#00ff88] transition-colors">Contact Us</a>
+          <span>•</span>
+          <a href="https://bearbullmarket.in/privacy" class="hover:text-[#00ff88] transition-colors">Privacy Policy</a>
+          <span>•</span>
+          <a href="https://bearbullmarket.in/terms" class="hover:text-[#00ff88] transition-colors">Terms of Service</a>
+        </div>
+
+        <!-- Google Compliance Disclaimer -->
+        <p class="max-w-3xl leading-relaxed text-gray-500 font-medium">
+          <strong>Disclaimer:</strong> BearBull Crypto Simulator is a virtual trading game designed solely for educational and entertainment purposes. No real money or actual asset deposits are processed on this website or within the application. All virtual balances are completely non-financial. Payout achievements are awarded based on skill-based leaderboard performance rules and do not constitute investment advice or real-money financial trading.
+        </p>
+
+        <!-- Copyright -->
+        <p class="text-gray-600 mt-2 font-bold uppercase tracking-wider">
+          © 2026 BearBull Market. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
     <!-- Sticky Bottom Conversion Bar for Mobile Devices -->
-    <div class="fixed bottom-0 left-0 right-0 z-50 bg-[#0a0a0f]/95 backdrop-blur-md border-t border-white/10 p-4 flex items-center justify-between md:hidden shadow-[0_-10px_30px_rgba(0,0,0,0.8)]">
+    <div class="fixed bottom-0 left-0 right-0 z-50 bg-[#0a0a0f]/95 backdrop-blur-md border-t border-white/10 p-4 flex items-center justify-between md:hidden shadow-[0_-10px_30px_rgba(0,0,0,0.8)] animate-bounce-subtle">
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 rounded-lg overflow-hidden bg-black flex items-center justify-center p-1 border border-gray-800">
           <img src="/logo.png" alt="BearBull Logo" class="w-full h-full object-contain">
