@@ -102,7 +102,7 @@ const Download = () => {
           {/* Main Glowing Badge */}
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-[#00ff88] text-xs sm:text-sm font-bold mb-8 uppercase tracking-widest shadow-[0_0_20px_rgba(0,255,136,0.1)]">
             <Trophy className="w-4 h-4 text-[#00ff88]" />
-            Win Up To ₹40,000 Cash Prizes Every Month
+            Win Up To ₹47,500 Cash Prizes Every Month
           </div>
 
           {/* Heading */}
@@ -115,7 +115,7 @@ const Download = () => {
 
           {/* Core App Information */}
           <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed font-medium">
-            Start with <strong className="text-white">₹8,00,000 ($10,000)</strong> virtual money. Practice with real-time market data. <span className="text-yellow-400 font-bold border-b border-yellow-400/30">100% Free & No Investment Required</span> — top the leaderboard and withdraw rewards directly to your UPI handle!
+            Start with <strong className="text-white"> $10,000 </strong> virtual money. Practice with real-time market data. <span className="text-yellow-400 font-bold border-b border-yellow-400/30">100% Free & No Investment Required</span> — top the leaderboard and withdraw rewards directly to your UPI handle!
           </p>
 
           {/* Pulse Pulsing Download Button */}
